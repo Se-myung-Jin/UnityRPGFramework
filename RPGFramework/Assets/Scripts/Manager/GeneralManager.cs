@@ -8,7 +8,10 @@ public class GeneralManager : MonoBehaviour
     static GeneralManager Instance {  get { Init(); return _instance; } }
 
     InputManager _input = new InputManager();
+    ResourceManager _resources = new ResourceManager();
+
     public static InputManager Input { get { return Instance._input; } }
+    public static ResourceManager Resource { get { return Instance._resources; } }
     
     void Start()
     {
