@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         GeneralManager.Input.MouseAction -= OnMouseClicked;
         GeneralManager.Input.MouseAction += OnMouseClicked;
+
+        GeneralManager.UI.ShowSceneUI<UI_Inven>();
     }
 
     void UpdateDie()
