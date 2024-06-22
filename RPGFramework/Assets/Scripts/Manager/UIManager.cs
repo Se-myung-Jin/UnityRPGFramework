@@ -61,8 +61,6 @@ public class UIManager
         T scene = Util.GetOrAddComponent<T>(go);
         _scene = scene;
 
-        
-
         go.transform.SetParent(Root.transform);
 
         return scene;
