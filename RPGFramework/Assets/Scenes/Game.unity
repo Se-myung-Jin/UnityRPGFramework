@@ -432,19 +432,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 831820690245363290, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
   m_PrefabInstance: {fileID: 2082791186}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1986246994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986246986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86958bed30b1b7947acecf4ebce3d9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!1001 &2082791186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -497,15 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 831820690245363290, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1986246994}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
