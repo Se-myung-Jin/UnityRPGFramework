@@ -8,12 +8,14 @@ public class GeneralManager : MonoBehaviour
     static GeneralManager Instance {  get { Init(); return _instance; } }
 
     InputManager _input = new InputManager();
+    PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
     SceneManagerEx _scene = new SceneManagerEx();
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
 
     public static InputManager Input { get { return Instance._input; } }
+    public static PoolManager Pool { get { return Instance._pool; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static SceneManagerEx Scene { get { return Instance._scene; } }
     public static SoundManager Sound { get { return Instance._sound; } }
@@ -23,8 +25,6 @@ public class GeneralManager : MonoBehaviour
     {
         Init();
     }
-
-    // Update is called once per frame
     void Update()
     {
         _input.OnUpdate();
@@ -44,6 +44,7 @@ public class GeneralManager : MonoBehaviour
             DontDestroyOnLoad(go);
             _instance = go.GetComponent<GeneralManager>();
 
+            _instance._pool.Init();
             _instance._sound.Init();
         }
     }
@@ -51,6 +52,7 @@ public class GeneralManager : MonoBehaviour
     public static void Clear()
     {
         Input.Clear();
+        Pool.Clear();
         Scene.Clear();
         Sound.Clear();
         UI.Clear();
