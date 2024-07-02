@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,8 +39,17 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            NavMeshAgent agent = gameObject.GetOrAddComponent<NavMeshAgent>(); ;
+
             float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude);
-            transform.position += dir.normalized * moveDist;
+            agent.Move(dir.normalized * moveDist);
+            //transform.position += dir.normalized * moveDist;
+
+            if (Physics.Raycast(transform.position, dir, 1.0f, LayerMask.GetMask("Block")))
+            {
+                _state = PlayerState.Idle;
+                return;
+            }
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 10 * Time.deltaTime);
         }
