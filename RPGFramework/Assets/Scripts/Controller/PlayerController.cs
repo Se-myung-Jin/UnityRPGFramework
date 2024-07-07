@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
         _stat = gameObject.GetOrAddComponent<PlayerStat>();
         GeneralManager.Input.MouseAction -= OnMouseEvent;
         GeneralManager.Input.MouseAction += OnMouseEvent;
+
+        GeneralManager.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
     }
 
     void UpdateDie()
