@@ -2564,7 +2564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113995097142560520, guid: 7305fff4667bb6b48bfbe3d4084c5730, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10.86
       objectReference: {fileID: 0}
     - target: {fileID: 7113995097142560520, guid: 7305fff4667bb6b48bfbe3d4084c5730, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2601,7 +2601,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7113995097142336296, guid: 7305fff4667bb6b48bfbe3d4084c5730, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1129603483}
   m_SourcePrefab: {fileID: 100100000, guid: 7305fff4667bb6b48bfbe3d4084c5730, type: 3}
 --- !u!1001 &446191346
 PrefabInstance:
@@ -7505,6 +7508,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471c1eb32c770a54ea8a1c3ffbda1de6, type: 3}
+--- !u!1 &1129603478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7113995097142336296, guid: 7305fff4667bb6b48bfbe3d4084c5730, type: 3}
+  m_PrefabInstance: {fileID: 442588286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1129603483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129603478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18a2b8eeefcd0144a39c9207e437932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destPos: {x: 0, y: 0, z: 0}
+  _state: 2
+  _lockTarget: {fileID: 0}
+  _scanRange: 10
+  _attackRange: 2
 --- !u!1001 &1135280154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11295,6 +11320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnityChan
       objectReference: {fileID: 0}
+    - target: {fileID: 831820690245363292, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 831820690245363293, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.093
@@ -11335,7 +11364,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2113144814357291569, guid: ac0aab6b738f19049844658069fae2c0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
