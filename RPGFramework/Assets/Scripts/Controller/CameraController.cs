@@ -16,11 +16,18 @@ public class CameraController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    public void SetPlayer(GameObject player)
+    {
+        _player = player; 
+    }
+
     void LateUpdate()
     {
         if (_mode == Define.CameraMode.QuarterView)
         {
+            if (!_player.IsValid())
+                return;
+
             RaycastHit hit;
             if (Physics.Raycast(_player.transform.position, _delta, out hit, _delta.magnitude, LayerMask.GetMask("Wall")))
             {

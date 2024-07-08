@@ -7,6 +7,10 @@ public class GeneralManager : MonoBehaviour
     static GeneralManager _instance;
     static GeneralManager Instance {  get { Init(); return _instance; } }
 
+    WorldObjectManager _object = new WorldObjectManager();
+
+    public static WorldObjectManager Object { get { return Instance._object; } }
+
     DataManager _data = new DataManager();
     InputManager _input = new InputManager();
     PoolManager _pool = new PoolManager();
