@@ -7,6 +7,8 @@ public class WorldObjectManager
     GameObject _player;
     HashSet<GameObject> _monsters = new HashSet<GameObject>();
 
+    public GameObject GetPlayer() { return _player; }
+
     public GameObject Spawn(Define.WorldObject type, string path, Transform parent = null)
     {
         GameObject obj = GeneralManager.Resource.Instanciate(path, parent);
