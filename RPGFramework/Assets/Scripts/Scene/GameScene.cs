@@ -10,14 +10,17 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.Game;
 
-        GeneralManager.UI.ShowSceneUI<UI_Inven>();
+        //GeneralManager.UI.ShowSceneUI<UI_Inven>();
 
         gameObject.GetOrAddComponent<CursorController>();
 
         GameObject player = GeneralManager.Object.Spawn(Define.WorldObject.Player, "UnityChan");
         Camera.main.gameObject.GetOrAddComponent<CameraController>().SetPlayer(player);
 
-        GeneralManager.Object.Spawn(Define.WorldObject.Monster, "Knight");
+        //GeneralManager.Object.Spawn(Define.WorldObject.Monster, "Knight");
+        GameObject go = new GameObject { name = "SpawningPool" };
+        SpawningPool pool = go.GetOrAddComponent<SpawningPool>();
+        pool.SetKeepMonsterCount(5);
     }
 
     public override void Clear()

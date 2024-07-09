@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class WorldObjectManager
 
     public GameObject GetPlayer() { return _player; }
 
+    public Action<int> OnSpawnEvent;
+
     public GameObject Spawn(Define.WorldObject type, string path, Transform parent = null)
     {
         GameObject obj = GeneralManager.Resource.Instanciate(path, parent);
@@ -17,6 +20,8 @@ public class WorldObjectManager
         {
             case Define.WorldObject.Monster:
                 _monsters.Add(obj);
+                if (OnSpawnEvent != null)
+                    OnSpawnEvent.Invoke(1);
                 break;
             case Define.WorldObject.Player:
                 _player = obj;
@@ -46,6 +51,8 @@ public class WorldObjectManager
                     if (_monsters.Contains(obj))
                     {
                         _monsters.Remove(obj);
+                        if (OnSpawnEvent != null)
+                            OnSpawnEvent.Invoke(-1);
                     }
                 }
                 break;
